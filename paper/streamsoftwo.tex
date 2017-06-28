@@ -20,6 +20,8 @@
 % Project-specific
 \newcommand{\gaia}{\project{Gaia}}
 
+\newcommand{\tub}{\ensuremath{t_{\rm ub}}}
+
 \begin{document}\sloppy\sloppypar\raggedbottom\frenchspacing % trust me
 
 \title{Stellar streams of two stars}
@@ -55,6 +57,68 @@
 \section{Introduction}\label{sec:introduction}
 
 
+\section{TODO} %\label{sec:introduction}
+
+Our goal is to predict the steady-state distribution of separations and other
+dynamical quantities for unbound comoving star pairs (i.e. former wide binaries
+and open cluster stars) in the Galactic disk.
+To do this, we will make several simplifying assumptions so that we can
+analytically incorporate perturbative effects from a given population of
+pertubing masses (e.g., giant molecular clouds, small-scale dark matter
+subhalos, black holes).
+In particular, we will work in angle-action coordinates and assume that the
+encounters between the perturbers and a given comoving pair are impulsive so
+that the perturbations add linearly.
+Below, we briefly describe the formalism for computing the final state of a
+single, unbound comoving pair.
+
+We will assume that the star pairs all come unbound once the separation is
+larger than the tidal (Jacobi) radius of the binary, and assume that the wide
+binaries are all on circular orbits with isotropically distributed angular
+momentum vectors.
+\todo{TODO: assumptions about background potential}
+Given a distribution function for stellar orbits in the disk, $f_*(\bs{J})$, the
+assumption that the stellar orbits are well-mixed so that the angle distribution
+is uniform, $p(\bs{\theta}) = \mathcal{U}(\bs{\theta})$, and a joint
+distribution of binary component stellar masses, $p(m_1, m_2)$, we can therefore
+compute the initial separation and velocity difference between the two stars in
+the comoving pair, $(\Delta \bs{x}, \Delta \bs{v})$,\footnote{We use $\Delta$ to
+indicate differences in quantities, typically between two stars in a comoving
+pair. Later, we use $\delta$ to indicate a small deviation or offset in a
+quantity.} for samples from these distributions.
+In detail, we sample a single set of orbital actions, $\bs{J}_1 \sim
+f_*(\bs{J})$ and angles $\bs{\theta}_1 \sim p(\bs{\theta})$, and two stellar
+masses $(m_1, m_2) \sim p(m_1, m_2)$, convert the actions to phase-space
+coordinates $(\bs{x}, \bs{v})_1$ assuming a uniform angle distribution, and
+compute the Jacobi radius as
+\begin{equation}
+r_{\rm J} = \left[\frac{G\,(m_1 + m_2)}{4\,\Omega_g \, A_g} \right]^{1/3}\quad .
+\end{equation}
+Assuming that the angular momenta of the wide binaries prior to disruption are
+isotropically distributed and circular, we can then compute the phase-space
+coordinates of the companion, $(\bs{x}, \bs{v})_2$, at the time of disruption,
+corresponding to action-angle coordinates $(\bs{J}, \bs{\theta})_2$.
+- Actions have corresponding frequencies, will work in freq.-angle space
+- Start with initial separation in frequency, angle
+- Unperturbed case, angle difference grows linearly along preferred direction
+- Perturbed case, need to add effects of perturbations
+- Given a time of perturbation, update angle and frequency as:
+
+\begin{eqnarray}
+\Delta\bs{\theta} &=& \Delta\bs{\theta}_0 +
+  \Delta\bs{\Omega}_0 \, (t - \tub) + \delta\bs{\theta} +
+  \delta\bs{\Omega} \, (t - \tub - t^*)\\
+\Delta\bs{\Omega} &=& \Delta\bs{\Omega}_0 + \delta\bs{\Omega}
+\end{eqnarray}
+
+where
+
+\begin{eqnarray}
+\delta\bs{\theta} &=& \left.\frac{\partial\bs{\theta}}{\partial\bs{v}}\right|_{\bs{x}} \cdot \delta\bs{v}^g\\
+\delta\bs{\Omega} &=& \left.\frac{\partial\bs{\Omega}}{\partial\bs{v}}\right|_{\bs{x}} \cdot \delta\bs{v}^g\\
+\end{eqnarray}
+
+TODO: why g superscript???
 
 \acknowledgements
 
