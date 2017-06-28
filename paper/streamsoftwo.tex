@@ -1,0 +1,101 @@
+\documentclass[modern, letterpaper]{aastex61}
+% \documentclass[twocolumn]{aastex61}
+
+% TODO:
+% -
+
+% style notes
+% -----------
+% - Use the Makefile; don't be typing ``pdflatex'' or some bullshit.
+% - Line break between sentences to make the git diffs readable.
+% - Use \, as a multiply operator.
+% - Reserve () for function arguments; use [] or {} for outer shit.
+% - Use \sectionname not Section, \figname not Figure, \documentname not Article
+
+\include{gitstuff}
+\include{preamble}
+\graphicspath{{figures/}}
+\usepackage{microtype}
+
+% Project-specific
+\newcommand{\gaia}{\project{Gaia}}
+
+\begin{document}\sloppy\sloppypar\raggedbottom\frenchspacing % trust me
+
+\title{Stellar streams of two stars}
+
+\author{Adrian~M.~Price-Whelan}
+\affiliation{Department of Astrophysical Sciences,
+             Princeton University, Princeton, NJ 08544, USA}
+
+\author{+++}
+
+% \author{David~N.~Spergel}
+% \affiliation{Flatiron Institute,
+%              Simons Foundation,
+%              162 Fifth Avenue,
+%              New York, NY 10010, USA}
+% \affiliation{Department of Astrophysical Sciences,
+%              Princeton University, Princeton, NJ 08544, USA}
+
+\correspondingauthor{Adrian M. Price-Whelan}
+\email{adrn@astro.princeton.edu}
+
+\begin{abstract}
+% Context
+% Aims
+% Methods
+% Results
+% Conclusions
+\end{abstract}
+
+\keywords{
+}
+
+\section{Introduction}\label{sec:introduction}
+
+
+
+\acknowledgements
+
+% This work has made use of data from the European Space Agency (ESA)
+% mission {\it Gaia} (\url{https://www.cosmos.esa.int/gaia}), processed by
+% the {\it Gaia} Data Processing and Analysis Consortium (DPAC,
+% \url{https://www.cosmos.esa.int/web/gaia/dpac/consortium}). Funding
+% for the DPAC has been provided by national institutions, in particular
+% the institutions participating in the {\it Gaia} Multilateral Agreement.
+% This research has made use of the SIMBAD database, operated at CDS, Strasbourg,
+% France.
+% The authors are pleased to acknowledge that the work reported on in this
+% paper was substantially performed at the TIGRESS high performance computer
+% center at Princeton University which is jointly supported by the Princeton
+% Institute for Computational Science and Engineering and the Princeton
+% University Office of Information Technology's Research Computing department.
+
+\software{
+The code used in this project is available from
+\url{https://github.com/adrn/StreamsOfTwo} under the MIT open-source
+software license.
+% This research utilized the following open-source \python\ packages:
+%     \package{Astropy} (\citealt{Astropy-Collaboration:2013}),
+%     \package{astroquery} (\citealt{Ginsburg:2016}),
+%     \package{ccdproc} (\citealt{Craig:2015}),
+%     \package{celerite} (\citealt{Foreman-Mackey:2017}),
+%     \package{corner} (\citealt{Foreman-Mackey:2016}),
+%     \package{emcee} (\citealt{Foreman-Mackey:2013ascl}),
+%     \package{IPython} (\citealt{Perez:2007}),
+%     \package{matplotlib} (\citealt{Hunter:2007}),
+%     \package{numpy} (\citealt{Van-der-Walt:2011}),
+%     \package{scipy} (\url{https://www.scipy.org/}),
+%     \package{sqlalchemy} (\url{https://www.sqlalchemy.org/}).
+% This work additionally used the Gaia science archive
+% (\url{https://gea.esac.esa.int/archive/}), and the SIMBAD database
+% (\citealt{Wenger:2000}).
+}
+
+% \facility{MDM: Hiltner (Modspec)}
+
+\bibliographystyle{aasjournal}
+\bibliography{refs}
+
+\end{document}
