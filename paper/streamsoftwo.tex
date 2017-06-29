@@ -92,33 +92,84 @@ masses $(m_1, m_2) \sim p(m_1, m_2)$, convert the actions to phase-space
 coordinates $(\bs{x}, \bs{v})_1$ assuming a uniform angle distribution, and
 compute the Jacobi radius as
 \begin{equation}
-r_{\rm J} = \left[\frac{G\,(m_1 + m_2)}{4\,\Omega_g \, A_g} \right]^{1/3}\quad .
+    r_{\rm J} = \left[\frac{G\,(m_1 + m_2)}{4\,\Omega_g \, A_g} \right]^{1/3}\quad .
 \end{equation}
 Assuming that the angular momenta of the wide binaries prior to disruption are
 isotropically distributed and circular, we can then compute the phase-space
 coordinates of the companion, $(\bs{x}, \bs{v})_2$, at the time of disruption,
 corresponding to action-angle coordinates $(\bs{J}, \bs{\theta})_2$.
-- Actions have corresponding frequencies, will work in freq.-angle space
-- Start with initial separation in frequency, angle
-- Unperturbed case, angle difference grows linearly along preferred direction
-- Perturbed case, need to add effects of perturbations
-- Given a time of perturbation, update angle and frequency as:
+The actions, $\bs{J}$, have corresponding frequencies
+\begin{equation}
+    \bs{\Omega} = \frac{\partial H}{\partial \bs{J}}
+\end{equation}
+that are also constants of motion as both $H$ and $\bs{J}$ are dynamical
+invariants.
+Following previous work, we will use frequencies in place of actions, so that
+the Galactic orbits of each star in a comoving pair are described by
+$(\bs{\Omega}, \bs{\theta})$.
 
+With the assumptions above, we start with the frequencies and angles of each
+star in a comoving pair, $(\bs{\Omega}, \bs{\theta})_1$ and $(\bs{\Omega},
+\bs{\theta})_2$, at the unbinding time, \tub, of the initial wide binary.
+In a smooth background potential, the difference in frequencies between the two
+stars is fixed, but the difference in angle variables increases linearly with
+time, $t$,
 \begin{eqnarray}
-\Delta\bs{\theta} &=& \Delta\bs{\theta}_0 +
-  \Delta\bs{\Omega}_0 \, (t - \tub) + \delta\bs{\theta} +
-  \delta\bs{\Omega} \, (t - \tub - t^*)\\
-\Delta\bs{\Omega} &=& \Delta\bs{\Omega}_0 + \delta\bs{\Omega}
+    \Delta\bs{\theta}(t) &=& \Delta\bs{\theta}_0 + \Delta\bs{\Omega}_0 \, (t - \tub)\\
+    \Delta\bs{\Omega} &=& \Delta\bs{\Omega}_0 = {\rm const.}
+\end{eqnarray}
+where $\Delta\bs{\theta}_0$ is the initial separation in angles and
+$\Delta\bs{\Omega}_0$ is the initial separation in frequencies, at the time of
+unbinding.
+This shearing is what leads to the growing physical separation between the pair
+and occurs preferentially in a direction determined by a projection of the
+largest eigenvector of the Hessian matrix, $\frac{\partial^2 H}{\partial
+\bs{J}_i \bs{J}_j}$, into configuration space.
+
+When the background gravitational potential contains a population of massive
+perturbers, encounters between the comoving pair and a given perturber will
+impart changes to the angles and frequencies of the two stars.
+If we invoke the impulse approximation and assume that the duration of any given
+encounter is much shorter than an orbit --- i.e. ignore the curvature of the
+orbits --- then the encounter only induces a net velocity kick, $\delta \bs{v}$.
+This (instantaneously applied) velocity kick can be expressed as changes to the
+angles and frequencies
+\begin{eqnarray}
+    \delta\bs{\theta} &=& \left.\frac{\partial\bs{\theta}}
+        {\partial\bs{v}}\right|_{\bs{x}} \cdot \delta\bs{v}\\
+    \delta\bs{\Omega} &=& \left.\frac{\partial\bs{\Omega}}
+        {\partial\bs{v}}\right|_{\bs{x}} \cdot \delta\bs{v} \quad .
+\end{eqnarray}
+The difference in angles and frequencies between the two stars after the
+encounter at time $t^*$ are then
+\begin{eqnarray}
+\Delta\bs{\theta}(t) &=& \Delta\bs{\theta}_0 +
+    \Delta\bs{\Omega}_0 \, (t - \tub) + \delta\bs{\theta} +
+    \delta\bs{\Omega} \, (t - \tub - t^*)\\
+\Delta\bs{\Omega} &=& \Delta\bs{\Omega}_0 + \delta\bs{\Omega} \quad .
 \end{eqnarray}
 
-where
-
+A given pair could encounter multiple perturbers and therefore receive several
+kicks at times $t^{(k)}$.
+In these coordinates, the pertubations add linearly so that
 \begin{eqnarray}
-\delta\bs{\theta} &=& \left.\frac{\partial\bs{\theta}}{\partial\bs{v}}\right|_{\bs{x}} \cdot \delta\bs{v}^g\\
-\delta\bs{\Omega} &=& \left.\frac{\partial\bs{\Omega}}{\partial\bs{v}}\right|_{\bs{x}} \cdot \delta\bs{v}^g\\
+\Delta\bs{\theta}(t) &=& \Delta\bs{\theta}_0 +
+    \Delta\bs{\Omega}_0 \, (t - \tub) + \sum_k \left[ \delta\bs{\theta}^{(k)} +
+    \delta\bs{\Omega}^{(k)} \, (t - \tub - t^{(k)}) \right]\\
+\Delta\bs{\Omega} &=& \Delta\bs{\Omega}_0 + \delta\bs{\Omega}^{(k)} \quad .
 \end{eqnarray}
+Therefore, given a set of encounter times, perturber orbital properties, and
+the masses or internal structure of the perturbers, we can compute the
+separation in angles and frequencies between the two stars at any time, $t$.
 
-TODO: why g superscript???
+- Perturber orbits from different DF
+- Perturber properties??
+- Encounter times -> sample from rate determined by cross-section for
+  instantaneous size of star pair in physical-space
+
+- Then convert back to configuration space - can predict separation
+  distribution, velocity difference distribution, on-sky correlation function...
+
 
 \acknowledgements
 
